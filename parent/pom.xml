@@ -35,7 +35,7 @@
         <maven-shade-plugin.version>3.5.2</maven-shade-plugin.version>
 
         <!-- Tracks gnome-build-tools version; both modules share the same ${revision} -->
-        <gnome-build-tools.version>${project.version}</gnome-build-tools.version>
+        <gnome-build-tools.version>${revision}</gnome-build-tools.version>
 
         <!-- Override in child pom to use checkstyle-strict.xml for hot-path modules -->
         <checkstyle.config>checkstyle/checkstyle.xml</checkstyle.config>
