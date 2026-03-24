@@ -9,6 +9,7 @@
 
     <modules>
         <module>build-tools</module>
+        <module>spotless-formatter</module>
         <module>parent</module>
     </modules>
 
