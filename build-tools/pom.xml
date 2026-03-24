@@ -6,7 +6,7 @@
     <parent>
         <groupId>group.gnometrading</groupId>
         <artifactId>gnome-build-tools-root</artifactId>
-        <version>${revision}</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>gnome-build-tools</artifactId>

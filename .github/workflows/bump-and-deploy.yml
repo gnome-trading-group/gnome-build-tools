@@ -28,8 +28,6 @@ jobs:
 
       - name: Bump and Deploy
         uses: gnome-trading-group/maven-bump-and-deploy-action@v1.0.11
-        with:
-          version-path: '/project/properties/revision'
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
