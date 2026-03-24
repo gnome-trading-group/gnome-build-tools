@@ -55,6 +55,14 @@
         </repository>
     </repositories>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>github</id>
+            <name>Internal Projects</name>
+            <url>https://maven.pkg.github.com/gnome-trading-group/*</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
