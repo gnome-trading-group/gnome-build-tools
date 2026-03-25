@@ -130,6 +130,41 @@ class ClosingParenNewLineStepTest {
     }
 
     @Test
+    void multiLineInterfaceMethod() throws Exception {
+        String input =
+                "public interface Foo {\n"
+                        + "    void doSomething(\n"
+                        + "            String first,\n"
+                        + "            String second);\n"
+                        + "}\n";
+
+        String expected =
+                "public interface Foo {\n"
+                        + "    void doSomething(\n"
+                        + "            String first,\n"
+                        + "            String second\n"
+                        + "    );\n"
+                        + "}\n";
+
+        assertEquals(expected, step.apply(input));
+    }
+
+    @Test
+    void multiLineMethodCallNotTransformedForSemi() throws Exception {
+        // A plain method call ending with ); must not be touched
+        String input =
+                "public class Foo {\n"
+                        + "    public void bar() {\n"
+                        + "        someMethod(\n"
+                        + "                arg1,\n"
+                        + "                arg2);\n"
+                        + "    }\n"
+                        + "}\n";
+
+        assertEquals(input, step.apply(input));
+    }
+
+    @Test
     void noOpOnEmptyInput() throws Exception {
         assertEquals("", step.apply(""));
     }
