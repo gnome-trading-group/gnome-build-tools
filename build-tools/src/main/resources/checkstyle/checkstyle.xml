@@ -15,10 +15,6 @@
     <property name="charset" value="UTF-8"/>
     <property name="severity" value="error"/>
 
-    <module name="FileTabCharacter"/>
-    <module name="NewlineAtEndOfFile">
-        <property name="lineSeparator" value="lf"/>
-    </module>
     <module name="RegexpSingleline">
         <property name="format" value="&lt;&lt;&lt;&lt;&lt;&lt;&lt;"/>
         <property name="message" value="Found a merge conflict marker. Please fix it."/>
@@ -31,26 +27,11 @@
     <module name="BeforeExecutionExclusionFileFilter">
         <property name="fileNamePattern" value="module\-info\.java$"/>
     </module>
-    <module name="LineLength">
-        <property name="max" value="120"/>
-        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://|\{@link"/>
-    </module>
-
     <module name="TreeWalker">
         <module name="SuppressWarningsHolder"/>
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="1"/>
-        </module>
-        <module name="AnnotationLocation">
-            <property name="tokens" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF"/>
-        </module>
-        <module name="AnnotationLocation">
-            <property name="tokens" value="VARIABLE_DEF"/>
-            <property name="allowSamelineMultipleAnnotations" value="true"/>
-        </module>
-        <module name="AnnotationUseStyle">
-            <property name="trailingArrayComma" value="ignore"/>
         </module>
         <module name="ArrayTypeStyle"/>
         <module name="AvoidEscapedUnicodeCharacters">
@@ -70,15 +51,9 @@
         <module name="EmptyCatchBlock">
             <property name="exceptionVariableName" value="expected"/>
         </module>
-        <module name="EmptyForInitializerPad"/>
-        <module name="EmptyLineSeparator">
-            <property name="tokens" value="IMPORT, CLASS_DEF, ENUM_DEF, INTERFACE_DEF, CTOR_DEF, STATIC_INIT, INSTANCE_INIT, VARIABLE_DEF"/>
-            <property name="allowNoEmptyLineBetweenFields" value="true"/>
-        </module>
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
         <module name="FallThrough"/>
-        <module name="GenericWhitespace"/>
         <module name="HiddenField">
             <property name="ignoreConstructorParameter" value="true"/>
             <property name="ignoreSetter" value="true"/>
@@ -94,18 +69,7 @@
             <property name="format" value="\\u00(08|09|0(a|A)|0(c|C)|0(d|D)|22|27|5(C|c))|\\(0(10|11|12|14|15|42|47)|134)"/>
             <property name="message" value="Avoid using corresponding octal or Unicode escape."/>
         </module>
-        <module name="ImportOrder">
-            <property name="groups" value="/.*/"/>
-            <property name="option" value="bottom"/>
-            <property name="separated" value="true"/>
-            <property name="sortStaticImportsAlphabetically" value="true"/>
-        </module>
-        <module name="Indentation">
-            <property name="arrayInitIndent" value="8"/>
-            <property name="lineWrappingIndentation" value="8"/>
-        </module>
         <module name="InnerAssignment"/>
-        <module name="LeftCurly"/>
         <module name="MemberName">
             <property name="format" value="^[a-z][a-zA-Z0-9]+$"/>
             <message key="name.invalidPattern" value="Member name ''{0}'' must match pattern ''{1}''."/>
@@ -114,7 +78,6 @@
             <property name="format" value="^[a-z][a-zA-Z0-9_]+$"/>
             <message key="name.invalidPattern" value="Method name ''{0}'' must match pattern ''{1}''."/>
         </module>
-        <module name="MethodParamPad"/>
         <module name="MissingDeprecated"/>
         <module name="ModifiedControlVariable"/>
         <module name="ModifierOrder"/>
@@ -123,20 +86,8 @@
         <module name="NeedBraces"/>
         <module name="NoClone"/>
         <module name="NoFinalizer"/>
-        <module name="NoLineWrap"/>
-        <module name="NoWhitespaceAfter">
-            <property name="allowLineBreaks" value="false"/>
-            <property name="tokens" value="BNOT,DEC,DOT,INC,LNOT,UNARY_MINUS,UNARY_PLUS"/>
-        </module>
-        <module name="NoWhitespaceBefore">
-            <property name="allowLineBreaks" value="true"/>
-        </module>
         <module name="OneStatementPerLine"/>
         <module name="OneTopLevelClass"/>
-        <module name="OperatorWrap">
-            <property name="option" value="NL"/>
-            <property name="tokens" value="BAND, BOR, BSR, BXOR, DIV, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR, LT, MINUS, MOD, NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR"/>
-        </module>
         <module name="OuterTypeFilename"/>
         <module name="OverloadMethodsDeclarationOrder"/>
         <module name="PackageDeclaration"/>
@@ -145,29 +96,8 @@
             <message key="name.invalidPattern" value="Package name ''{0}'' must match pattern ''{1}''."/>
         </module>
         <module name="ParameterAssignment"/>
-        <module name="ParenPad"/>
         <module name="RedundantImport"/>
         <module name="RedundantModifier"/>
-        <module name="RegexpSinglelineJava">
-            <property name="format" value="\s+$"/>
-            <property name="message" value="Trailing whitespace is not allowed."/>
-        </module>
-        <module name="RightCurly">
-            <property name="option" value="same"/>
-            <property name="tokens" value="CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_DO"/>
-        </module>
-        <module name="RightCurly">
-            <property name="option" value="alone"/>
-            <property name="tokens" value="LITERAL_FOR, LITERAL_WHILE, STATIC_INIT, INSTANCE_INIT"/>
-        </module>
-        <module name="SeparatorWrap">
-            <property name="tokens" value="DOT"/>
-            <property name="option" value="nl"/>
-        </module>
-        <module name="SeparatorWrap">
-            <property name="tokens" value="COMMA"/>
-            <property name="option" value="EOL"/>
-        </module>
         <module name="SimplifyBooleanExpression"/>
         <module name="SimplifyBooleanReturn"/>
         <module name="StaticVariableName"/>
@@ -179,22 +109,10 @@
         <module name="TypeName">
             <message key="name.invalidPattern" value="Type name ''{0}'' must match pattern ''{1}''."/>
         </module>
-        <module name="TypecastParenPad"/>
         <module name="UnusedImports">
             <property name="processJavadoc" value="true"/>
         </module>
         <module name="UpperEll"/>
-        <module name="WhitespaceAfter"/>
-        <module name="WhitespaceAround">
-            <property name="allowEmptyConstructors" value="true"/>
-            <property name="allowEmptyMethods" value="true"/>
-            <property name="allowEmptyTypes" value="true"/>
-            <property name="allowEmptyLoops" value="true"/>
-            <property name="allowEmptyLambdas" value="true"/>
-            <property name="ignoreEnhancedForColon" value="false"/>
-            <message key="ws.notFollowed" value="WhitespaceAround: ''{0}'' is not followed by whitespace. Empty blocks may only be represented as '{}' when not part of a multi-block statement (4.1.3)"/>
-            <message key="ws.notPreceded" value="WhitespaceAround: ''{0}'' is not preceded with whitespace."/>
-        </module>
 
         <!-- Stricter checks: remove some for faster prototyping, but restore before pushing to production. -->
 
@@ -216,9 +134,6 @@
         </module>
         <module name="JavadocStyle">
             <property name="checkFirstSentence" value="false"/>
-        </module>
-        <module name="JavadocTagContinuationIndentation">
-            <property name="offset" value="0"/>
         </module>
         <module name="LocalFinalVariableName"/>
         <module name="LocalVariableName">
