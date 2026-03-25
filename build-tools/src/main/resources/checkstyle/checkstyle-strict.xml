@@ -55,11 +55,6 @@
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
         <module name="FallThrough"/>
-        <module name="HiddenField">
-            <property name="ignoreConstructorParameter" value="true"/>
-            <property name="ignoreSetter" value="true"/>
-            <property name="setterCanReturnItsClass" value="true"/>
-        </module>
         <module name="HideUtilityClassConstructor"/>
         <module name="IllegalInstantiation">
             <property name="classes" value="java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Double, java.lang.Float, java.lang.Integer, java.lang.Long"/>
