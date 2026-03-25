@@ -241,8 +241,6 @@
 
         <!-- Stricter checks end -->
 
-        <module name="com.gnometrading.checkstyle.ClosingParenOnNewLineCheck"/>
-
         <!-- HFT hot-path rules: prevent GC and contention -->
 
         <!-- Force named constants — magic numbers cause confusion and can hide bugs -->

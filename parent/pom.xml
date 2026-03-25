@@ -32,8 +32,6 @@
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <build-helper-maven-plugin.version>3.5.0</build-helper-maven-plugin.version>
         <maven-shade-plugin.version>3.5.2</maven-shade-plugin.version>
-        <gnome-spotless-formatter.version>1.1.2-SNAPSHOT</gnome-spotless-formatter.version>
-
         <!-- Override in child pom to use checkstyle-strict.xml for hot-path modules -->
         <checkstyle.config>checkstyle/checkstyle.xml</checkstyle.config>
     </properties>
@@ -145,13 +143,6 @@
                         <removeUnusedImports />
                         <trimTrailingWhitespace />
                         <endWithNewline />
-                        <custom>
-                            <name>closingParenNewLine</name>
-                            <classPath>
-                                <classPathEntry>group.gnometrading:gnome-spotless-formatter:${gnome-spotless-formatter.version}</classPathEntry>
-                            </classPath>
-                            <className>com.gnometrading.spotless.ClosingParenNewLineStep</className>
-                        </custom>
                     </java>
                 </configuration>
                 <executions>

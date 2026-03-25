@@ -240,6 +240,5 @@
 
         <!-- Stricter checks end -->
 
-        <module name="com.gnometrading.checkstyle.ClosingParenOnNewLineCheck"/>
     </module>
 </module>

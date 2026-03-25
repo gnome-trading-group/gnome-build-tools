@@ -28,7 +28,7 @@ jobs:
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
 
       - name: Bump and Deploy
-        uses: gnome-trading-group/maven-bump-and-deploy-action@v1.0.11
+        uses: gnome-trading-group/maven-bump-and-deploy-action@v1.0.16
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
