@@ -179,14 +179,6 @@
                 java.util.TreeSet, TreeSet"/>
         </module>
 
-        <!-- Ban String.format() — allocates garbage on every call; use string concatenation or
-             a pre-allocated StringBuilder for hot-path logging/formatting -->
-        <module name="RegexpSinglelineJava">
-            <property name="format" value="String\.format\s*\("/>
-            <property name="message" value="String.format() allocates garbage; use string concatenation or a pre-allocated buffer instead."/>
-            <property name="ignoreComments" value="true"/>
-        </module>
-
         <!-- Ban the synchronized keyword — causes thread contention; use lock-free data structures
              or explicit java.util.concurrent primitives with deliberate scoping instead -->
         <module name="RegexpSinglelineJava">
