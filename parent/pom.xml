@@ -5,7 +5,7 @@
     <parent>
         <groupId>group.gnometrading</groupId>
         <artifactId>gnome-build-tools-root</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
     </parent>
 
     <artifactId>gnome-parent</artifactId>
@@ -32,7 +32,7 @@
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <build-helper-maven-plugin.version>3.5.0</build-helper-maven-plugin.version>
         <maven-shade-plugin.version>3.5.2</maven-shade-plugin.version>
-        <gnome-spotless-formatter.version>1.0.2-SNAPSHOT</gnome-spotless-formatter.version>
+        <gnome-spotless-formatter.version>1.0.2</gnome-spotless-formatter.version>
 
         <!-- Override in child pom to use checkstyle-strict.xml for hot-path modules -->
         <checkstyle.config>checkstyle/checkstyle.xml</checkstyle.config>
@@ -171,7 +171,7 @@
                     <dependency>
                         <groupId>group.gnometrading</groupId>
                         <artifactId>gnome-build-tools</artifactId>
-                        <version>1.0.2-SNAPSHOT</version>
+                        <version>1.0.2</version>
                     </dependency>
                 </dependencies>
                 <configuration>
