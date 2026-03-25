@@ -145,22 +145,18 @@
                         <removeUnusedImports />
                         <trimTrailingWhitespace />
                         <endWithNewline />
+                        <custom>
+                            <name>closingParenNewLine</name>
+                            <classPath>
+                                <classPathEntry>group.gnometrading:gnome-spotless-formatter:${gnome-spotless-formatter.version}</classPathEntry>
+                            </classPath>
+                            <className>com.gnometrading.spotless.ClosingParenNewLineStep</className>
+                        </custom>
                     </java>
                 </configuration>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>group.gnometrading</groupId>
-                <artifactId>gnome-spotless-formatter</artifactId>
-                <version>${gnome-spotless-formatter.version}</version>
-                <executions>
-                    <execution>
+                        <phase>validate</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>

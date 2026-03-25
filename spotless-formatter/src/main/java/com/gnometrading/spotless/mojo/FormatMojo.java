@@ -29,24 +29,9 @@ public class FormatMojo extends AbstractMojo {
     @Parameter(defaultValue = "${session}", readonly = true, required = true)
     private MavenSession session;
 
-    @Parameter(defaultValue = "${project.build.sourceDirectory}", required = true, readonly = true)
-    private File sourceDirectory;
-
-    @Parameter(defaultValue = "${project.build.testSourceDirectory}", required = true, readonly = true)
-    private File testSourceDirectory;
-
     @Override
     public void execute() throws MojoExecutionException {
         runSpotlessApply();
-
-        JavaFormatter formatter = new JavaFormatter(getLog());
-        int count = 0;
-        for (File dir : List.of(sourceDirectory, testSourceDirectory)) {
-            count += formatter.applyToDirectory(dir);
-        }
-        if (count > 0) {
-            getLog().info("gnome-formatter: reformatted " + count + " file(s).");
-        }
     }
 
     private void runSpotlessApply() throws MojoExecutionException {

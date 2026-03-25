@@ -1,5 +1,6 @@
 package com.gnometrading.spotless;
 
+import com.diffplug.spotless.FormatterFunc;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Set;
@@ -22,7 +23,7 @@ import java.util.Set;
  * which distinguishes method/constructor declarations from control-flow
  * constructs and method calls.
  */
-public class ClosingParenNewLineStep {
+public class ClosingParenNewLineStep implements FormatterFunc {
 
     private static final Set<String> CONTROL_FLOW_KEYWORDS =
             Set.of("if", "else", "while", "for", "switch", "catch", "try");
