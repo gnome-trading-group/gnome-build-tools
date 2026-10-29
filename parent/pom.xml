@@ -21,6 +21,8 @@
         <junit-jupiter.version>5.10.2</junit-jupiter.version>
         <mockito.version>5.14.2</mockito.version>
         <agrona.version>2.2.3</agrona.version>
+        <!-- Aeron 1.48.3 is the release built on Agrona 2.2.3; move the two together. -->
+        <aeron.version>1.48.3</aeron.version>
 
         <!-- Plugin version pins -->
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
@@ -86,6 +88,16 @@
                 <groupId>org.agrona</groupId>
                 <artifactId>agrona</artifactId>
                 <version>${agrona.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.aeron</groupId>
+                <artifactId>aeron-client</artifactId>
+                <version>${aeron.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.aeron</groupId>
+                <artifactId>aeron-driver</artifactId>
+                <version>${aeron.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
