@@ -150,5 +150,16 @@
 
         <!-- Stricter checks end -->
 
+        <!-- Ban Agrona's epoch-nanosecond system clocks: SystemEpochNanoClock and HighResolutionClock build an
+             Instant on every read (garbage on the hot path), and OffsetEpochNanoClock's offset comes from
+             currentTimeMillis, up to a millisecond off. gnome-core's SampledEpochNanoClock is allocation-free and
+             accurate to tens of nanoseconds. -->
+        <module name="RegexpSinglelineJava">
+            <property name="id" value="epochNanoClock"/>
+            <property name="format" value="\b(SystemEpochNanoClock|HighResolutionClock|OffsetEpochNanoClock)\b"/>
+            <property name="message" value="Use group.gnometrading.utils.SampledEpochNanoClock: the Agrona epoch-nanosecond clocks allocate per read or are only millisecond-accurate."/>
+            <property name="ignoreComments" value="true"/>
+        </module>
+
     </module>
 </module>
