@@ -22,6 +22,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Reserve the Aeron port range
+        # Linux hands out ephemeral ports from 32768-60999, so a socket bound to port 0 (every Aeron publication's
+        # send socket) can take a port in 40000-40999 that a test binds explicitly.
+        run: sudo sysctl -w net.ipv4.ip_local_reserved_ports=40000-40999
       - name: Set up Zulu 17
         uses: actions/setup-java@v3
         with:
@@ -48,6 +52,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Reserve the Aeron port range
+        # Linux hands out ephemeral ports from 32768-60999, so a socket bound to port 0 (every Aeron publication's
+        # send socket) can take a port in 40000-40999 that a test binds explicitly.
+        run: sudo sysctl -w net.ipv4.ip_local_reserved_ports=40000-40999
       - name: Set up Zulu 17
         uses: actions/setup-java@v3
         with:
